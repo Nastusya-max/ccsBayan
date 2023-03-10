@@ -1,0 +1,142 @@
+/* #region Global */
+:root {
+  /* Pallete */
+  --palette-white: #fff;
+  --palette-mirage: #1a1f29;
+  --palette-indigo: #435dc7;
+  --palette-silver: #cccccc;
+
+  --text-color: var(--palette-mirage);
+  --heading-color: var(--palette-mirage);
+  --border-color: var(--palette-silver);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--palette-white);
+  color: var(--text-color);
+  line-height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 45rem; /* 1440px */
+  padding: 0 3.75rem;
+  margin: 0 auto;
+}
+/* #endregion */
+
+.form-buttons__container {
+  margin-top: 1rem;
+}
+
+.collapsible-tabe {
+  margin-top: 3rem;
+}
+
+.button {
+  margin: 0.375rem 0;
+}
+
+.collapsible-button {
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.collapsible-item:last-child {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.collapsible-button {
+  padding: 34px 0;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.collapsible-content {
+  overflow: visible;
+  height: auto;
+  visibility: visible;
+  transition: height 0.35s ease-in-out;
+  padding: 20px 80px 40px 0px;
+}
+
+.collapsible-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.сollapsible-plus,
+.сollapsible-minus {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 5.5px);
+  width: 11px;
+  height: 11px;
+}
+
+.сollapsible-plus:before,
+.сollapsible-minus::before {
+  width: 11px;
+  height: 1px;
+  opacity: 1;
+}
+.сollapsible-plus:after,
+.сollapsible-minus::after {
+  width: 1px;
+  height: 11px;
+}
+
+.сollapsible-plus:before,
+.сollapsible-plus:after,
+.сollapsible-minus::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background-color: currentColor;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.сollapsible-icon {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 5.5px);
+  width: 11px;
+  height: 11px;
+}
+
+.сollapsible-icon:before {
+  width: 11px;
+  height: 1px;
+  opacity: 1;
+}
+.сollapsible-icon:after {
+  width: 1px;
+  height: 11px;
+}
+
+.сollapsible-icon:after,
+.collapsible-button[aria-expanded="false"] .сollapsible-icon::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background-color: currentColor;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.collapsible-button:hover {
+  color: var(--palette-indigo);
+}

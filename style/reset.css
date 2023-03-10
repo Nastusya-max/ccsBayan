@@ -54,3 +54,12 @@ select {
 a {
   text-decoration: none;
 }
+
+button {
+  text-transform: none;
+  padding: 0;
+  overflow: visible;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
