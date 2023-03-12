@@ -14,6 +14,7 @@
 html {
   box-sizing: border-box;
 }
+/* #endregion */
 
 body {
   background-color: var(--palette-white);
@@ -24,11 +25,93 @@ body {
   width: 100%;
   max-width: 45rem; /* 720px */
   padding: 0 3.75rem;
-  margin: 0 auto;
-}
-/* #endregion */
-
-.collapsible__list {
+  margin: auto;
   margin-top: 3rem;
 }
 
+.heading {
+  text-align: center;
+}
+
+.heading--xxl {
+  font-size: 1.5rem;
+}
+
+.collapsible__list {
+  width: 70%;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.collapsible__item {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.collapsible__input {
+  display: none;
+}
+
+.collapsible__label {
+  align-items: center;
+  cursor: pointer;
+  transition: 0.45s;
+}
+
+.label-description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__content {
+  overflow-y: hidden;
+  height: 0;
+  opacity: 0;
+  transition: 1s;
+}
+
+.content-img {
+  width: 15rem;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.collapsible__input:checked ~ label{
+  color: var(--palette-indigo);
+}
+
+ul li input[type="radio"] ~ label i {
+  visibility: hidden;
+  /* transition: 1s; */
+}
+
+ul:hover li input[type="radio"] ~ label i {
+  visibility: visible;
+}
+
+.collapsible__input:hover ~ .collapsible__content,
+.collapsible__input:checked ~ .collapsible__content {
+  height: 19rem;
+  opacity: 1;
+  
+}
+
+ul li input[type="radio"] ~ label i {
+  transition: 0.45s;
+}
+ul li input[type="radio"]:hover ~ label i,
+ul li input[type="radio"]:checked ~ label i {
+  transform: rotate(45deg);
+}
+
+
+.collapsible__input:hover ~ .collapsible__label .collapsible__content,
+.collapsible__input:checked ~ .collapsible__label .collapsible__content {
+  height: 19rem;
+  opacity: 1;
+}
