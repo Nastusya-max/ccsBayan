@@ -9,6 +9,8 @@
   --text-color: var(--palette-mirage);
   --heading-color: var(--palette-mirage);
   --border-color: var(--palette-silver);
+  /* Fonts */
+  --text-font-family: "Mulish", sans-serif;
 }
 
 html {
@@ -20,6 +22,8 @@ body {
   background-color: var(--palette-white);
   color: var(--text-color);
   font-size: 18px;
+  font-family: var(--text-font-family);
+  line-height: 1.5;
 }
 
 .container {
@@ -32,6 +36,7 @@ body {
 
 .heading {
   text-align: center;
+  color: var(--heading-color);
 }
 
 .heading--xxl {
@@ -49,7 +54,11 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
+}
+
+.collapsible__item {
+  border-bottom: 0.09rem solid var(--border-color);
 }
 
 .collapsible__input {
@@ -74,10 +83,6 @@ body {
   transition: 1s;
 }
 
-.content-img {
-  width: 15rem;
-}
-
 .content-wrapper {
   display: flex;
   justify-content: center;
@@ -85,29 +90,25 @@ body {
   padding: 1rem;
 }
 
-.collapsible__input:checked ~ label {
+.content-img {
+  width: 15rem;
+}
+
+.collapsible-icon {
+  visibility: hidden;
+  transition: 0.45s;
+}
+
+.collapsible__input:checked ~ .collapsible__label {
   color: var(--palette-indigo);
 }
 
-ul li input[type="radio"] ~ label i {
-  visibility: hidden;
-  /* transition: 1s; */
-}
-
-ul:hover li input[type="radio"] ~ label i {
-  visibility: visible;
-}
-
-.collapsible__input:checked ~ .collapsible__content {
+.collapsible__input:checked .collapsible__content {
   height: 19rem;
   opacity: 1;
 }
 
-ul li input[type="radio"] ~ label i {
-  transition: 0.45s;
-}
-
-ul li input[type="radio"]:checked ~ label i {
+.collapsible__input:checked ~ .collapsible__label .collapsible-icon {
   transform: rotate(45deg);
 }
 
@@ -120,18 +121,28 @@ ul li input[type="radio"]:checked ~ label i {
 }
 
 @media (hover: hover) {
+  .collapsible__list:hover .collapsible-icon {
+    visibility: visible;
+  }
+
   .collapsible__input:hover ~ .collapsible__content {
     height: 19rem;
     opacity: 1;
   }
 
-  ul li input[type="radio"]:hover ~ label i {
+  .collapsible__input:hover ~ .collapsible__label .collapsible-icon {
     transform: rotate(45deg);
   }
 
   .collapsible__input:hover ~ .collapsible__label .collapsible__content {
     height: 19rem;
     opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .collapsible-icon {
+    visibility: visible;
   }
 }
 
@@ -162,3 +173,4 @@ ul li input[type="radio"]:checked ~ label i {
     height: 10rem;
   }
 }
+
