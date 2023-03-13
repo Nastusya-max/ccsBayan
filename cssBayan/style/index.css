@@ -121,6 +121,10 @@ body {
 }
 
 @media (hover: hover) {
+  .collapsible__input:hover ~ .collapsible__label {
+    color: var(--palette-indigo);
+  }
+
   .collapsible__list:hover .collapsible-icon {
     visibility: visible;
   }
