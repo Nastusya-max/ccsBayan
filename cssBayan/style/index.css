@@ -133,6 +133,10 @@ body {
     color: var(--palette-indigo);
   }
 
+  .collapsible__input:active ~ .collapsible__label .content-img {
+    opacity: 0.6;
+  }
+
   .collapsible__list:hover .collapsible-icon {
     visibility: visible;
   }
