@@ -5,6 +5,7 @@
   --palette-mirage: #1a1f29;
   --palette-indigo: #435dc7;
   --palette-silver: #cccccc;
+  --palette-salem: #0e9553;
 
   --text-color: var(--palette-mirage);
   --heading-color: var(--palette-mirage);
@@ -68,7 +69,8 @@ body {
 .collapsible__label {
   align-items: center;
   cursor: pointer;
-  transition: 0.45s;
+  /* transition: 0.45s; */
+  color: var(--palette-indigo);
 }
 
 .label-description {
@@ -100,7 +102,8 @@ body {
 }
 
 .collapsible__input:checked ~ .collapsible__label {
-  color: var(--palette-indigo);
+  /* color: var(--palette-indigo); */
+  color: var(--text-color);
 }
 
 .collapsible__input:checked .collapsible__content {
@@ -121,7 +124,15 @@ body {
 }
 
 @media (hover: hover) {
-  .collapsible__input:hover ~ .collapsible__label {
+  .collapsible__list:hover .collapsible__label{
+    color: var(--text-color);
+  }
+
+  .collapsible__label:hover {
+    color: var(--text-color);
+  }
+
+  .collapsible__input:active ~ .collapsible__label {
     color: var(--palette-indigo);
   }
 
