@@ -5,7 +5,6 @@
   --palette-mirage: #1a1f29;
   --palette-indigo: #435dc7;
   --palette-silver: #cccccc;
-  --palette-salem: #0e9553;
 
   --text-color: var(--palette-mirage);
   --heading-color: var(--palette-mirage);
@@ -69,7 +68,6 @@ body {
 .collapsible__label {
   align-items: center;
   cursor: pointer;
-  /* transition: 0.45s; */
   color: var(--palette-indigo);
 }
 
@@ -102,7 +100,6 @@ body {
 }
 
 .collapsible__input:checked ~ .collapsible__label {
-  /* color: var(--palette-indigo); */
   color: var(--text-color);
 }
 
@@ -124,7 +121,7 @@ body {
 }
 
 @media (hover: hover) {
-  .collapsible__list:hover .collapsible__label{
+  .collapsible__list:hover .collapsible__label {
     color: var(--text-color);
   }
 
@@ -140,11 +137,6 @@ body {
     visibility: visible;
   }
 
-  .collapsible__input:hover ~ .collapsible__content {
-    height: 19rem;
-    opacity: 1;
-  }
-
   .collapsible__input:hover ~ .collapsible__label .collapsible-icon {
     transform: rotate(45deg);
   }
@@ -152,6 +144,9 @@ body {
   .collapsible__input:hover ~ .collapsible__label .collapsible__content {
     height: 19rem;
     opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
